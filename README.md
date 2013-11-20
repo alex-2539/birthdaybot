@@ -1,4 +1,4 @@
-birthdaybot
+Birthdaybot
 ===========
 
 App that posts on your behalf on friends birthdays. 

@@ -1,7 +1,16 @@
-<%= form_tag('/post', method: 'post') do %>
-    Get Random Message: <%="message" %></div>
+<%= form_tag('/create', method: 'post') do %>
+    Message: <%= text_field_tag "post[message]" %></div>
+    Name: <%= text_field_tag "post[name]" %></div>
+    Link: <%= text_field_tag "post[link]" %></div>
     <%= submit_tag 'Save' %></div>
 <% end %>
+
+
+<%= form_tag('/post', method: 'post') do %>
+    <%= submit_tag 'Random' %></div>
+<% end %>
+
+
 
 
 

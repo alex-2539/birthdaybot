@@ -18,7 +18,11 @@ class MainController < ApplicationController
 
   def create
     @create = Post.create(params[:post])
-    @post = current_user.facebook.put_wall_post(params[:post][:message], {:name => [:post][:name], :link => [:post][:link]})
+    @message = params[:post][:message]
+    @link = params[:post][:link]
+    @name = params[:post][:name]
+
+    @post = current_user.facebook.put_wall_post( @message, {:name => @name, :link => @link })
     redirect_to root_path
 
   end

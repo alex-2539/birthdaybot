@@ -19,7 +19,6 @@
    </style>
  </head>
  <body>
-    <!-- IF/ELSE CONDITION TO DISPLAY LINK TO LOG OUT IF SIGNED IN -->
     <% if current_user %>
       <a><%= current_user.name %></a>
       <div id="login-modal">
@@ -29,7 +28,6 @@
         <p class="login-txt">Submit Your Links or Choose at Random!</p>
         </div>
     <% else %>
-      <a><%= "Login" %></a>
       <div class="main-body">
         <div id="fb-login">
           <div id="login-modal">
@@ -41,8 +39,6 @@
         </div>
       </div>
     <% end %>
-
-    <!-- END IF/ELSE CONDITION TO DISPLAY LINK TO LOG OUT IF SIGNED IN -->
  <%= yield %>
  </body>
  </html>

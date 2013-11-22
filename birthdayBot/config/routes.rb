@@ -1,6 +1,8 @@
 BirthdayBot::Application.routes.draw do
 
-  root to: "main#index"
+  root to: "main#new"
+
+  post '/post', to: "main#post"
 
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: 'sessions#create'

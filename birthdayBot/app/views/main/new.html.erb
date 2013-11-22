@@ -10,22 +10,22 @@
 
   </style>
 </head>
+<% if current_user %>
+  <div class = "create">
+  <%= form_tag('/create', method: 'post') do %>
+      Message: <%= text_field_tag "post[message]" %>
+      Name: <%= text_field_tag "post[name]" %>
+      Link: <%= text_field_tag "post[link]" %>
+      <%= submit_tag 'Save' %>
+  <% end %>
+  </div>
 
-<div class = "create">
-<%= form_tag('/create', method: 'post') do %>
-    Message: <%= text_field_tag "post[message]" %>
-    Name: <%= text_field_tag "post[name]" %>
-    Link: <%= text_field_tag "post[link]" %>
-    <%= submit_tag 'Save' %>
+  <div class = "random">
+  <%= form_tag('/post', method: 'post') do %>
+      <%= submit_tag 'Random' %></div>
+  <% end %>
+  </div>
 <% end %>
-</div>
-
-<div class = "random">
-<%= form_tag('/post', method: 'post') do %>
-    <%= submit_tag 'Random' %></div>
-<% end %>
-</div>
-
 
 
 

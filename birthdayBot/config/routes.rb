@@ -8,6 +8,7 @@ BirthdayBot::Application.routes.draw do
   match 'auth/failure', to: 'sessions#create'
   match 'signout', to: 'sessions#destroy', as: 'signout'
   match 'login', to: 'main#login'
+  match 'post', to: 'main#post'
 
 
 end

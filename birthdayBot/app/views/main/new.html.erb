@@ -1,15 +1,30 @@
+<head>
+  <style>
+    div.random{
+      text-align: center;
+      padding: 30px
+    }
+    div.create{
+      text-align: center;
+    }
+
+  </style>
+</head>
+
+<div class = "create">
 <%= form_tag('/create', method: 'post') do %>
-    Message: <%= text_field_tag "post[message]" %></div>
-    Name: <%= text_field_tag "post[name]" %></div>
-    Link: <%= text_field_tag "post[link]" %></div>
-    <%= submit_tag 'Save' %></div>
+    Message: <%= text_field_tag "post[message]" %>
+    Name: <%= text_field_tag "post[name]" %>
+    Link: <%= text_field_tag "post[link]" %>
+    <%= submit_tag 'Save' %>
 <% end %>
+</div>
 
-
+<div class = "random">
 <%= form_tag('/post', method: 'post') do %>
     <%= submit_tag 'Random' %></div>
 <% end %>
-
+</div>
 
 
 

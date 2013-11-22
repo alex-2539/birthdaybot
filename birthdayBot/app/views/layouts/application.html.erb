@@ -1,32 +1,42 @@
 <!DOCTYPE html>
  <html>
  <head>
-   <title>BirthdayBot</title>
+   <title>Posterest</title>
    <%= stylesheet_link_tag    "application" %>
    <%= javascript_include_tag "application" %>
    <%= csrf_meta_tags %>
+   <style>
+    p{
+      border:2px solid gray;
+      border-radius:25px;
+      background-color: #3B5998;
+      padding-bottom: 20px;
+      color: white;
+    }
+    a{
+      text-align: right
+    }
+   </style>
  </head>
  <body>
-  <div class="current-user">
-   <div id="name">
-    <!-- IF/ELSE CONDITION TO DISPLAY USERS USERNAME ONCE LOGGED IN -->
-    <% if current_user %>
-      <a><%= current_user.name %></a>
-    <% end %>
-    <!-- END IF/ELSE CONDITION TO DISPLAY USERS USERNAME ONCE LOGGED IN -->
-   </div>
-  </div>
     <!-- IF/ELSE CONDITION TO DISPLAY LINK TO LOG OUT IF SIGNED IN -->
     <% if current_user %>
-      <%= link_to "Sign out", signout_path, id: "sign_out" %>
+      <a><%= current_user.name %></a>
+      <div id="login-modal">
+        <div id="login-img-container">
+            <%= link_to(image_tag("https://www.save.ca/img/logout_FB.png"), signout_path, id: "sign_out") %>
+        </div>
+        <p class="login-txt">Submit Your Links or Choose at Random!</p>
+        </div>
     <% else %>
+      <a><%= "Login" %></a>
       <div class="main-body">
         <div id="fb-login">
           <div id="login-modal">
-            <p class="login-txt">Never Forget a Birthday again!</p>
             <div id="login-img-container">
-              <%= link_to(image_tag("fb-login.png"), "/auth/facebook", id: "sign_in") %>
+              <%= link_to(image_tag("https://www.save.ca/img/signup_FB.png"), "/auth/facebook", id: "sign_in") %>
             </div>
+            <p class="login-txt">Submit Your Links or Choose at Random!</p>
           </div>
         </div>
       </div>

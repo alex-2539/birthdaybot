@@ -20,21 +20,38 @@
  </head>
  <body>
     <% if current_user %>
-      <a><%= current_user.name %></a>
-      <div id="login-modal">
-        <div id="login-img-container">
-            <%= link_to(image_tag("https://www.save.ca/img/logout_FB.png"), signout_path, id: "sign_out") %>
+    <a><%= current_user.name %></a>
+
+    <nav class="navbar navbar-default navbar-static-top navbar-right" role="navigation">
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><%= link_to(image_tag("https://www.save.ca/img/logout_FB.png"), signout_path, id: "sign_out") %></li>
+        </ul>
+      </div>
+    </nav></br></br></br></br></br>
+
+       <div class="main-body">
+        <div id="fb-login">
+          <div id="login-modal">
+            <p class="login-txt">Submit Your Posts or Choose at Random!</p>
+          </div>
         </div>
-        <p class="login-txt">Submit Your Links or Choose at Random!</p>
-        </div>
+      </div>
+
     <% else %>
+
+    <nav class="navbar navbar-default navbar-static-top navbar-right" role="navigation">
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><%= link_to(image_tag("https://www.save.ca/img/signup_FB.png"), "/auth/facebook", id: "sign_in") %></li>
+        </ul>
+      </div>
+    </nav></br></br></br></br></br>
+
       <div class="main-body">
         <div id="fb-login">
           <div id="login-modal">
-            <div id="login-img-container">
-              <%= link_to(image_tag("https://www.save.ca/img/signup_FB.png"), "/auth/facebook", id: "sign_in") %>
-            </div>
-            <p class="login-txt">Submit Your Links or Choose at Random!</p>
+            <p class="login-txt">Submit Your Posts or Choose at Random!</p>
           </div>
         </div>
       </div>
